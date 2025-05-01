@@ -30,6 +30,14 @@ Run the script with a YouTube URL as an argument:
 python main.py https://youtu.be/YOUR_VIDEO_ID
 ```
 
+### Downloading Audio Segments
+You can download a specific segment of the audio by providing start and end times in seconds using the --start and --end flags. Both flags must be used together.
+
+Example: Download audio from 30 seconds to 120 seconds:
+```
+python main.py https://youtu.be/YOUR_VIDEO_ID --start 30 --end 120
+```
+
 ### Default URL
 
 If no URL is provided, the script will use a default YouTube video:
