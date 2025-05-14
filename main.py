@@ -188,6 +188,7 @@ if __name__ == "__main__":
     parser.add_argument("url", nargs='?', help="URL of the YouTube video. If omitted, uses a default.", default=None)
     parser.add_argument("-s", "--start", type=int, help="Start time for the segment in seconds.", default=None)
     parser.add_argument("-e", "--end", type=int, help="End time for the segment in seconds.", default=None)
+    parser.add_argument("--downgrade", type=str, help="Path to an MP3 file to convert to low quality.", default=None)
 
     args = parser.parse_args()
 
@@ -207,6 +208,10 @@ if __name__ == "__main__":
          print(f"Error: Start time ({args.start}) must be less than end time ({args.end}).")
          sys.exit(1)
 
-
     # Call main function with parsed arguments
     main(video_url, args.start, args.end)
+
+    if args.downgrade:
+        ffmpeg_path = get_ffmpeg_path()
+        convert_to_low_quality(args.downgrade, ffmpeg_path)
+        sys.exit(0)

@@ -38,6 +38,13 @@ Example: Download audio from 30 seconds to 120 seconds:
 python main.py https://youtu.be/YOUR_VIDEO_ID --start 30 --end 120
 ```
 
+### Downgrade an Existing MP3 to Low Quality
+You can convert any existing MP3 file to a low quality (64kbps) version using the `--downgrade` flag:
+```
+python main.py --downgrade your_audio.mp3
+```
+This will create a new file with `_low` added to the filename, e.g., `your_audio_low.mp3`.
+
 ### Default URL
 
 If no URL is provided, the script will use a default YouTube video:
